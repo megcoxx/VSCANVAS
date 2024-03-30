@@ -7,9 +7,9 @@ namespace Library.VSCANVAS.Models
 
         public string? Name { get; set; }
 
-        public int Id { get; set;}
+        public int? CourseId { get; set; }
 
-        public int StudentId { get; set; }
+        public int? StudentId { get; set; }
 
         public string? Description { get; set; }
 
@@ -51,7 +51,7 @@ namespace Library.VSCANVAS.Models
 
         public override String ToString()
         {
-            return $"{Name} {Code} {Id}";
+            return $"{Name} {Code} {CourseId}";
 
         }
 

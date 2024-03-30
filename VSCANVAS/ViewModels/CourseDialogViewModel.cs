@@ -21,7 +21,6 @@ namespace VSCANVAS.ViewModels
                 course.Name = value;
             }
         }
-
         public string Code
         {
             get
@@ -37,7 +36,6 @@ namespace VSCANVAS.ViewModels
                 course.Code = value;
             }
         }
-
         public string Description
         {
             get
@@ -56,11 +54,13 @@ namespace VSCANVAS.ViewModels
 
         public CourseDialogViewModel(int cId)
         {
-            if(cId == 0){
+            if (cId == 0)
+            {
                 course = new Course();
             }
-            else{
-                course = new Course { Name =  "SUCCESS"};
+            else
+            {
+                course = CourseService.Current.Get(cId) ?? new Course();
             }
         }
 

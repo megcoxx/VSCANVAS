@@ -46,10 +46,6 @@ namespace VSCANVAS.ViewModels
             NotifyPropertyChanged(nameof(Students));
         }
 
-        public void updateStudent()
-        {
-
-        }
         public StudentViewModel()
         {
             studentSvc = StudentService.Current;

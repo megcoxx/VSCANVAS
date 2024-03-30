@@ -31,28 +31,28 @@ public class CourseService
     private CourseService()
     {
         courses = new List<Course>{
-            new Course{Name = "TestCourse1", Id = 1},
-            new Course{Name = "TestCourse2", Id =2}
+            new Course{Name = "TestCourse1", CourseId = 1},
+            new Course{Name = "TestCourse2", CourseId =2}
         };
     }
-
-    // public IEnumerable<Course> GetByStudent(Guid studentId) {
-    //     return courses.Where(p => p.StudentId == studentId);
-    // }
 
     public int Count()
     {
         return courses.Count;
     }
 
+    public Course? Get(int id)
+    {
+        return courses.FirstOrDefault(c => c.CourseId == id);
+    }
 
     public void AddOrUpdate(Course course)
     {
-        if (course.Id <= 0)
+        if (course.CourseId <= 0 || course.CourseId == null)
         {
-            course.Id = (this.Count()) + 1;
+            course.CourseId = (this.Count()) + 1;
+            courses.Add(course);
         }
-        courses.Add(course);
     }
 
     public void Remove(Course course)

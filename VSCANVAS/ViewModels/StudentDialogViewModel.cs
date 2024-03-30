@@ -1,5 +1,7 @@
 ﻿using Library.VSCANVAS.Models;
 using Library.VSCANVAS.Services;
+using static Android.Graphics.ImageDecoder;
+
 namespace VSCANVAS.ViewModels
 {
     public class StudentDialogViewModel
@@ -43,7 +45,7 @@ namespace VSCANVAS.ViewModels
                 student = new Student();
             }
             else{
-                student = new Student { Name = "SUCCESS"};
+                student = StudentService.Current.Get(cId) ?? new Student();
             }
         }
 

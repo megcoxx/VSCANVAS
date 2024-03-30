@@ -32,8 +32,8 @@ public class StudentService
     private StudentService()
     {
         students = new List<Student>{
-            new Student{Name = "TestStudent1", Id =1},
-            new Student{Name = "TestStudent2", Id =2}
+            new Student{Name = "TestStudent1", StudentId = 1},
+            new Student{Name = "TestStudent2", StudentId = 2}
         };
     }
 
@@ -45,11 +45,16 @@ public class StudentService
 
     public void AddOrUpdate(Student student)
     {
-        if(student.Id <= 0)
+        if (student.StudentId <= 0 || student.StudentId == null)
         {
-            student.Id = (this.Count()) + 1;
+            student.StudentId = (this.Count()) + 1;
+            students.Add(student);
         }
-        students.Add(student);
+    }
+
+    public Student? Get(int id)
+    {
+        return students.FirstOrDefault(c => c.StudentId == id);
     }
 
     public int Count()
