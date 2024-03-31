@@ -22,7 +22,8 @@ namespace VSCANVAS.ViewModels
             NotifyPropertyChanged(nameof(Courses));
         }
 
-        public void Remove(){
+        public void Remove()
+        {
             courseSvc.Remove(SelectedCourse);
             Refresh();
         }
@@ -30,23 +31,27 @@ namespace VSCANVAS.ViewModels
         {
             get
             {
-                return new ObservableCollection<Course>(courseSvc.Courses);
+                return new ObservableCollection<Course>(courseSvc.Courses.
+                    ToList().Where(c => c?.Name?.ToUpper().Contains(Query?.ToUpper() ?? string.Empty) ?? false));
             }
         }
 
-        public Course SelectedCourse{
-            get;set;
+        public Course SelectedCourse
+        {
+            get; set;
         }
 
         public void addCourse()
         {
-            courseSvc.AddOrUpdate(new Course {Name = "This is a new student." });
+            courseSvc.AddOrUpdate(new Course { Name = "This is a new student." });
             NotifyPropertyChanged(nameof(Courses));
         }
         public CourseViewModel()
         {
             courseSvc = CourseService.Current;
-            
+
         }
+
+        public string Query { get; set; }
     }
 }

@@ -10,6 +10,8 @@ namespace VSCANVAS.ViewModels
     {
         private StudentService studentSvc;
 
+        public string Query { get; set; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -31,7 +33,8 @@ namespace VSCANVAS.ViewModels
         {
             get
             {
-                return new ObservableCollection<Student>(studentSvc.Students);
+                return new ObservableCollection<Student>(studentSvc.Students.
+                    ToList().Where(c => c?.Name?.ToUpper().Contains(Query?.ToUpper() ?? string.Empty) ?? false));
             }
         }
 

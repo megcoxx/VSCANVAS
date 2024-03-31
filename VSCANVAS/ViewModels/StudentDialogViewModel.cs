@@ -1,6 +1,5 @@
 ﻿using Library.VSCANVAS.Models;
 using Library.VSCANVAS.Services;
-using static Android.Graphics.ImageDecoder;
 
 namespace VSCANVAS.ViewModels
 {

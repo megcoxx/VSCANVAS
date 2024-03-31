@@ -5,10 +5,14 @@
              Title="StudentInstructorView"
              NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
-        <Label 
-            Text="STUDENTS!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding Query}" Grid.Column="0"/>
+            <Button Text="Search" Clicked="SearchClicked" Grid.Column="1"/>
+        </Grid>
         <ListView 
             ItemsSource = "{Binding Students}"
             SelectedItem="{Binding SelectedStudent}">

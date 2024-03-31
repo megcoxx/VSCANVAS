@@ -33,4 +33,9 @@ public partial class CoursesEnrolled : ContentPage
 	private void RemoveClicked(object sender, EventArgs e){
 		(BindingContext as CourseViewModel)?.Remove();
 	}
+
+    private void SearchClicked(object sender, EventArgs e)
+    {
+        (BindingContext as CourseViewModel)?.Refresh();
+    }
 }

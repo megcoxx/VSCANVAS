@@ -44,4 +44,9 @@ public partial class StudentInstructorView : ContentPage
     {
         (BindingContext as StudentViewModel)?.Remove();
     }
+
+    private void SearchClicked(object sender, EventArgs e)
+    {
+        (BindingContext as StudentViewModel)?.Refresh();
+    }
 }

@@ -5,10 +5,14 @@
              Title="CourseView"
              NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
-        <Label 
-            Text="COURSES!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding Query}" Grid.Column="0"/>
+            <Button Text="Search" Clicked="SearchClicked" Grid.Column="1"/>
+        </Grid>
         <ListView 
             ItemsSource = "{Binding Courses}"
             SelectedItem="{Binding SelectedCourse}">
@@ -18,7 +22,7 @@
             Clicked = "AddClicked" />
         <Button
             Text="Edit"
-            Clicked = "EditClicked" />    
+            Clicked = "EditClicked" />
         <Button
             Text="Remove"
             Clicked = "RemoveClicked"/>

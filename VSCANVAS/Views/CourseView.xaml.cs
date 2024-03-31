@@ -44,4 +44,9 @@ public partial class CourseView : ContentPage
     {
         (BindingContext as CourseViewModel)?.Remove();
     }
+
+    private void SearchClicked(object sender, EventArgs e)
+    {
+        (BindingContext as CourseViewModel)?.Refresh();
+    }
 }
