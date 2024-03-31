@@ -7,6 +7,7 @@ public class CourseService
     private string? query;
     private static object _lock = new();
     private static CourseService? instance;
+
     public static CourseService Current
     {
         get
@@ -28,6 +29,7 @@ public class CourseService
                     c.Name.ToUpper().Contains(query ?? string.Empty));
         }
     }
+
     private CourseService()
     {
         courses = new List<Course>{

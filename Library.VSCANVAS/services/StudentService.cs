@@ -7,6 +7,7 @@ public class StudentService
     private string? query;
     private static object _lock = new();
     private static StudentService? instance;
+
     public static StudentService Current
     {
         get

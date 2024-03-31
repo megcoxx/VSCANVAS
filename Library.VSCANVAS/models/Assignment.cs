@@ -10,10 +10,7 @@ namespace Library.VSCANVAS.Models
 
         public string? DueDate { get; set; }
 
-        public Assignment()
-        {
-
-        }
+        public Assignment(){}
 
         public Assignment(string name, string? description, int? totalpointavail, string? duedate)
         {
@@ -27,6 +24,5 @@ namespace Library.VSCANVAS.Models
         {
             return Name.ToString();
         }
-
     }
 }

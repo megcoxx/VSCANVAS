@@ -37,7 +37,6 @@ public partial class CourseView : ContentPage
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         (BindingContext as CourseViewModel)?.Refresh();
-
     }
 
     private void RemoveClicked(object sender, EventArgs e)

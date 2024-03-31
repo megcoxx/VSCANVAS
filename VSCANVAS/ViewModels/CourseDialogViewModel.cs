@@ -4,8 +4,8 @@ namespace VSCANVAS.ViewModels
 {
     public class CourseDialogViewModel
     {
-
         private Course? course;
+
         public string Name
         {
             get
@@ -21,6 +21,7 @@ namespace VSCANVAS.ViewModels
                 course.Name = value;
             }
         }
+
         public string Code
         {
             get
@@ -36,6 +37,7 @@ namespace VSCANVAS.ViewModels
                 course.Code = value;
             }
         }
+
         public string Description
         {
             get

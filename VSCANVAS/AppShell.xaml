@@ -8,12 +8,11 @@
     xmlns:local3="clr-namespace:VSCANVAS.Dialogs"
     Shell.FlyoutBehavior="Disabled"
     Title="VSCANVAS">
-
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-   <ShellContent
+    <ShellContent
         Title="Instructor"
         ContentTemplate="{DataTemplate local2:InstructorView}"
         Route="Instructor"/>
@@ -37,6 +36,4 @@
         Title="Courses Enrolled In"
         ContentTemplate="{DataTemplate local2:CoursesEnrolled}"
         Route="CoursesEnrolled"/>
-
-
 </Shell>

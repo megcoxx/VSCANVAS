@@ -7,6 +7,5 @@ namespace Library.VSCANVAS.Models
         public string? Description { get; set; }
 
         public List<ContentItem>? Contents;
-
     }
 }

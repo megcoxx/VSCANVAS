@@ -32,7 +32,6 @@ public partial class StudentInstructorView : ContentPage
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         (BindingContext as StudentViewModel)?.Refresh();
-
     }
 
     private void PreviousPageClicked(object sender, EventArgs e)

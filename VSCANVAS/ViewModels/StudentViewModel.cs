@@ -9,9 +9,7 @@ namespace VSCANVAS.ViewModels
     internal class StudentViewModel : INotifyPropertyChanged
     {
         private StudentService studentSvc;
-
         public string Query { get; set; }
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -29,6 +27,7 @@ namespace VSCANVAS.ViewModels
             studentSvc.Remove(SelectedStudent);
             Refresh();
         }
+
         public ObservableCollection<Student> Students
         {
             get
@@ -38,10 +37,7 @@ namespace VSCANVAS.ViewModels
             }
         }
 
-        public Student SelectedStudent
-        {
-            get; set;
-        }
+        public Student SelectedStudent { get; set; }
 
         public void addStudent()
         {

@@ -5,8 +5,8 @@ namespace VSCANVAS.ViewModels
 {
     public class StudentDialogViewModel
     {
-
         private Student? student;
+
         public string Name
         {
             get
@@ -22,6 +22,7 @@ namespace VSCANVAS.ViewModels
                 student.Name = value;
             }
         }
+
         public string Classification
         {
             get
@@ -40,10 +41,12 @@ namespace VSCANVAS.ViewModels
 
         public StudentDialogViewModel(int cId)
         {
-            if(cId == 0){
+            if (cId == 0)
+            {
                 student = new Student();
             }
-            else{
+            else
+            {
                 student = StudentService.Current.Get(cId) ?? new Student();
             }
         }
