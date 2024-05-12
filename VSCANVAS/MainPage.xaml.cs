@@ -1,4 +1,6 @@
-﻿namespace VSCANVAS;
+﻿using VSCANVAS.ViewModels;
+
+namespace VSCANVAS;
 
 public partial class MainPage : ContentPage
 {
@@ -9,12 +11,12 @@ public partial class MainPage : ContentPage
 
     private void InstructorViewClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//Instructor");
+        Shell.Current.GoToAsync("//InstructorHome");
     }
 
     private void StudentViewClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//CoursesEnrolled");
+        Shell.Current.GoToAsync($"//CoursesEnrolled?studentId={1}");
     }
 }
 

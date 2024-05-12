@@ -15,13 +15,13 @@ public partial class CourseDialog : ContentPage
 
     private void CancelClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//Course");
+        Shell.Current.GoToAsync("//AllCourses");
     }
 
     private void ConfirmClicked(object sender, EventArgs e)
     {
         (BindingContext as CourseDialogViewModel)?.AddCourse();
-        Shell.Current.GoToAsync("//Course");
+        Shell.Current.GoToAsync("//AllCourses");
     }
 
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)

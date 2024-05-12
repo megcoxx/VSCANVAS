@@ -2,9 +2,9 @@ using VSCANVAS.ViewModels;
 
 namespace VSCANVAS.Views;
 
-public partial class CourseView : ContentPage
+public partial class AllCoursesView : ContentPage
 {
-    public CourseView()
+    public AllCoursesView()
     {
         InitializeComponent();
         BindingContext = new CourseViewModel();
@@ -31,7 +31,7 @@ public partial class CourseView : ContentPage
 
     private void PreviousPageClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//Instructor");
+        Shell.Current.GoToAsync("//InstructorHome");
     }
 
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
@@ -47,5 +47,14 @@ public partial class CourseView : ContentPage
     private void SearchClicked(object sender, EventArgs e)
     {
         (BindingContext as CourseViewModel)?.Refresh();
+    }
+
+    private void CourseClicked(object sender, EventArgs e)
+    {
+        int? courseId = (BindingContext as CourseViewModel)?.SelectedCourse?.CourseId;
+        if (courseId != null)
+        {
+            Shell.Current.GoToAsync($"//SpecificCourseInformation?courseId={courseId}");
+        }
     }
 }

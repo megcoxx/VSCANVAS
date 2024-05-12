@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Dialogs.AssignmentDialog"
+             Title="AssignmentDialog"
+             NavigatedTo="ContentPage_NavigatedTo"
+             >
+    <VerticalStackLayout Margin="20">
+        <Label 
+            Text="Assignment Details"
+            FontFamily=""
+            Margin="20"
+            FontSize="30"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" Grid.Column="0" FontFamily="" FontSize="20" Grid.Row="0" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Name}" Grid.Column="1" FontFamily="" FontSize="20" Grid.Row="0"/>
+            <Label Text="Total Points Available" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding TotalAvailablePoints}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+            <Label Text="Description" Grid.Column="0" FontFamily="" FontSize="20" Grid.Row="2" VerticalTextAlignment="Center" />
+            <Entry Text="{Binding Description}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+            <Label Text="Due Date" Grid.Column="0" FontFamily="" FontSize="20" Grid.Row="3" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding DueDate}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+        </Grid>
+        <Button Text="Confirm" Margin="50" FontSize="20" Clicked="ConfirmClicked"/>
+        <Button Text="Cancel" Margin="50,0,50,50" FontSize="20" Clicked="CancelClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

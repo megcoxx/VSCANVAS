@@ -58,6 +58,12 @@ public class StudentService
         return students.FirstOrDefault(c => c.StudentId == id);
     }
 
+    public IEnumerable<Course> StudentsCourses(int id)
+    {
+        Student student = Get(id);
+        return student.CoursesEnrolledIn;
+    }
+
     public int Count()
     {
         return students.Count;
@@ -66,10 +72,5 @@ public class StudentService
     public void Remove(Student student)
     {
         students.Remove(student);
-    }
-
-    public void Delete(Student studentToDelete)
-    {
-        students.Remove(studentToDelete);
     }
 }

@@ -10,7 +10,9 @@ namespace Library.VSCANVAS.Models
 
         public string? DueDate { get; set; }
 
-        public Assignment(){}
+        public int? AssignmentId { get; set; }
+
+        public Assignment() { }
 
         public Assignment(string name, string? description, int? totalpointavail, string? duedate)
         {

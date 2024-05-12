@@ -6,12 +6,22 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
             <Button
-                Text = "Instructor View"
+                Text = "I am an INSTRUCTOR"
+                Grid.Column="0"
+                Margin="150"
                 Clicked = "InstructorViewClicked"/>
             <Button
-                Text = "Student View"
+                Text = "I am a STUDENT"
+                Margin="150"
+                Grid.Column="1"
                 Clicked = "StudentViewClicked"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

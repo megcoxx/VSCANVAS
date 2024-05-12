@@ -1,5 +1,6 @@
 ﻿using Library.VSCANVAS.Models;
 using Library.VSCANVAS.Services;
+
 namespace VSCANVAS.ViewModels
 {
     public class CourseDialogViewModel

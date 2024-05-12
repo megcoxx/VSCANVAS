@@ -34,8 +34,9 @@ public class CourseService
     {
         courses = new List<Course>{
             new Course{Name = "TestCourse1", CourseId = 1},
-            new Course{Name = "TestCourse2", CourseId =2}
+            new Course{Name = "TestCourse2", CourseId = 2}
         };
+        courses.FirstOrDefault().Roster = new List<Student>();
     }
 
     public int Count()
@@ -62,8 +63,19 @@ public class CourseService
         courses.Remove(course);
     }
 
-    public void Delete(Course courseToDelete)
+    public void AddStudent(int studentID, Course course)
     {
-        courses.Remove(courseToDelete);
+        Student student = StudentService.Current.Get(studentID);
+        if (!course.Roster.Contains(student))
+        {
+            course.Roster.Add(student);
+            student.CoursesEnrolledIn.Add(course);
+        };
+    }
+
+    public void RemoveFromRoster(Student student, Course course)
+    {
+        course.Roster.Remove(student);
     }
 }
+

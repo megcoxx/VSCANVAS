@@ -35,33 +35,9 @@ namespace Library.VSCANVAS.Models
             Modules = new List<Module>();
         }
 
-        public void RemoveStudent(string? name)
-        {
-            for (int i = 0; i < Roster.Count; i++)
-            {
-                Student? item = Roster[i];
-                if (item.Name.Equals(name))
-                {
-                    Roster.Remove(item);
-                }
-            }
-        }
-
         public override String ToString()
         {
             return $"{Name} {Code} {CourseId}";
-        }
-
-        public void SearchName(String searched)
-        {
-            foreach (var item in Roster)
-            {
-                if (item.Name.Equals(searched))
-                {
-                    Console.WriteLine(this);
-                    Console.WriteLine("");
-                }
-            }
         }
     }
 }

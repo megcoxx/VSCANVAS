@@ -10,7 +10,12 @@
 
         public string? Grade { get; set; }
 
-        public Student(){ }
+        public List<Course> CoursesEnrolledIn;
+
+        public Student()
+        {
+            CoursesEnrolledIn = new List<Course>();
+        }
 
         public override string ToString()
         {

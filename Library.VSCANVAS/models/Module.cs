@@ -6,6 +6,8 @@ namespace Library.VSCANVAS.Models
 
         public string? Description { get; set; }
 
+        public int? ModuleId { get; set; }
+
         public List<ContentItem>? Contents;
     }
 }

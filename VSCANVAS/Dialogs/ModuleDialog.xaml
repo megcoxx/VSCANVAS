@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Dialogs.ModuleDialog"
+             Title="ModuleDialog"
+             NavigatedTo="ContentPage_NavigatedTo"
+             >
+    <VerticalStackLayout Margin="20">
+        <Label 
+            Text="Module Details"
+            FontFamily=""
+            Margin="20"
+            FontSize="30"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Title" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Name}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="0"/>
+            <Label Text="Description" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Description}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+        </Grid>
+        <Button Text="Confirm" Margin="50" FontSize="20" Clicked="ConfirmClicked"/>
+        <Button Text="Cancel" Margin="50,0,50,50" FontSize="20" Clicked="CancelClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

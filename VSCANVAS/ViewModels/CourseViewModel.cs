@@ -37,9 +37,12 @@ namespace VSCANVAS.ViewModels
             }
         }
 
-        public Course SelectedCourse
+        public Course SelectedCourse { get; set; }
+
+        public void addStudentToCourse(int studentID)
         {
-            get; set;
+            courseSvc.AddStudent(studentID, SelectedCourse);
+            Refresh();
         }
 
         public void addCourse()

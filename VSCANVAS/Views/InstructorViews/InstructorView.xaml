@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Views.InstructorView"
+             Title="InstructorView">
+    <StackLayout Orientation="Vertical" VerticalOptions="Start" Margin="50,25,25,25">
+        <VerticalStackLayout Margin="0,50,25,25">
+            <Label
+                Text="Dashboard"
+                Margin="70,30,10,10"
+                FontSize="60"
+                FontFamily=""
+                FontAttributes="Bold"/>
+            <Line X1="70"
+                Y1="10"
+                X2="1175"
+                Y2="10"
+                StrokeLineCap="Round"
+                Stroke="Lavender"
+                StrokeThickness="4"/>
+        </VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Fill" Margin="25">
+            <Button 
+                Text="COURSES"
+                Clicked = "ViewAllCoursesClicked"
+                HeightRequest="225"
+                WidthRequest="300"
+                CornerRadius="0"
+                BorderWidth="1"
+                FontFamily=""
+                FontSize="40"
+                Margin="50"/>
+            <Button
+                Text="STUDENTS"
+                Clicked = "ViewAllStudentsClicked"
+                HeightRequest="225"
+                WidthRequest="300"
+                CornerRadius="0"
+                BorderWidth="1"
+                FontFamily=""
+                FontSize="40"
+                Margin="50"/>
+            <Button
+                Text="HOME"
+                Clicked= "BackToHomeClicked"
+                HeightRequest="225"
+                WidthRequest="300"
+                CornerRadius="0"
+                FontFamily=""
+                BorderWidth="1"
+                FontSize="40"
+                Margin="50"/>
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>

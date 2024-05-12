@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Views.AllModulesView"
+             Title="AllModulesView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <VerticalStackLayout>
+        <Label
+            Text="Modules"
+            FontSize="50"
+            Margin="20,20,20,10"
+            FontFamily=""/>
+        <Line
+            X1="10"
+            Y1="0"
+            X2="1310"
+            Y2="0"
+            StrokeLineCap="Round"
+            Stroke="Lavender"
+            StrokeThickness="4"/>
+        <Grid Margin="10,20,20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Entry Text="{Binding Query}" Grid.Column="0" FontFamily=""/>
+            <Button Text="Search" FontSize="20" Clicked="SearchClicked" Grid.Column="1" FontFamily=""/>
+        </Grid>
+        <ListView
+            SeparatorVisibility="Default"
+            SeparatorColor="Lavender"
+            ItemTapped="ListView_ItemTapped"
+            ItemsSource = "{Binding Modules}" SelectedItem="{Binding SelectedModule}"
+            VerticalScrollBarVisibility="Always">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:Name="ModuleX">
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="3.25*"/>
+                                <ColumnDefinition Width=".75*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Code}"
+                                FontAttributes="Italic"
+                                VerticalOptions="End"
+                                FontSize="20"
+                                Padding="10,0,0,0"
+                                FontFamily=""/>
+                            <Label
+                                Grid.Column="2"
+                                Text="{Binding Name}"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                FontFamily=""/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Text="Add"
+            Margin="10,350,10,10"
+            Clicked = "AddClicked"
+            FontSize="25"/>
+        <Button
+            Text="Remove"
+            Margin="10"
+            Clicked = "RemoveClicked"
+            FontSize="25"/>
+        <Button
+            Text="Previous Page"
+            Margin="10"
+            Clicked="PreviousPageClicked"
+            FontSize="25"/>
+        <Button
+            Text="Back to Home"
+            Margin="10"
+            Clicked = "BackToHomeClicked"
+            FontSize="25"/>
+    </VerticalStackLayout>
+</ContentPage>

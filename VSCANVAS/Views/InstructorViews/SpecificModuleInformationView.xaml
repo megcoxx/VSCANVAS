@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Views.SpecificModuleInformationView"
+             Title="SpecificModuleInformationView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <StackLayout Orientation="Vertical">
+        <Label
+            Text="{Binding Name}"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            FontSize="60"
+            Margin="20"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout Margin="0,20,20,20">
+                <Button
+                    HorizontalOptions="Start"
+                    Text="Edit"
+                    HeightRequest="225"
+                    WidthRequest="200"
+                    CornerRadius="0"
+                    BorderWidth="1"
+                    FontSize="25"
+                    Clicked="EditClicked"/>
+                <Button
+                    HorizontalOptions="Start"
+                    Text="Delete"
+                    HeightRequest="225"
+                    WidthRequest="200"
+                    CornerRadius="0"
+                    BorderWidth="1"
+                    FontSize="25"/>
+                <Button
+                    HorizontalOptions="Start"
+                    Text="Return"
+                    HeightRequest="225"
+                    WidthRequest="200"
+                    CornerRadius="0"
+                    BorderWidth="1"
+                    FontSize="25"
+                    Clicked="ReturnBtnClicked"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="End"
+                    Text="{Binding Description}"
+                    Margin="0,75,0,0"
+                    FontSize="50"/>
+                <Button
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Contents"
+                    HeightRequest="225"
+                    WidthRequest="200"
+                    CornerRadius="0"
+                    BorderWidth="1"
+                    FontSize="25"
+                    Margin="400,175"
+                    Clicked="ModuleContentsBtnClicked"/>
+                </VerticalStackLayout>
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>

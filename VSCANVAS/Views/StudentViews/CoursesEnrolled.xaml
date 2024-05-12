@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VSCANVAS.Views.StudentInstructorView"
-             Title="StudentInstructorView"
+             x:Class="VSCANVAS.Views.CoursesEnrolled"
+             Title="CoursesEnrolled"
              NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
         <Grid>
@@ -11,24 +11,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Entry Text="{Binding Query}" Grid.Column="0"/>
-            <Button Text="Search" Clicked="SearchClicked" Grid.Column="1"/>
+            <Button Text="Search" Margin="150" Clicked="SearchClicked" Grid.Column="1"/>
         </Grid>
-        <ListView 
-            ItemsSource = "{Binding Students}"
-            SelectedItem="{Binding SelectedStudent}">
+        <ListView
+            SeparatorVisibility="Default"
+            SeparatorColor="Lavender"
+            ItemTapped="CourseClicked"
+            ItemsSource = "{Binding Courses}" SelectedItem="{Binding SelectedCourse}"
+            VerticalScrollBarVisibility="Always">
         </ListView>
-        <Button
-            Text="Add"
-            Clicked = "AddClicked" />
-        <Button
-            Text="Edit"
-            Clicked = "EditClicked" />
-        <Button
-            Text="Remove"
-            Clicked = "RemoveClicked"/>
-        <Button
-            Text="Previous Page"
-            Clicked = "PreviousPageClicked"/>
         <Button
             Text="Back to Home"
             Clicked = "BackToHomeClicked" />

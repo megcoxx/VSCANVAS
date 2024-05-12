@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Views.SpecificCourseInformationView"
+             Title="SpecificCourseInformationView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <StackLayout Orientation="Vertical" >
+        <Label
+                Margin="20"
+                Text="{Binding Code}"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                FontSize="60"
+                FontFamily=""/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                HorizontalOptions="Start"
+                Text="Modules"
+                HeightRequest="225"
+                WidthRequest="200"
+                CornerRadius="0"
+                BorderWidth="1"
+                Clicked="ModulesClicked"
+                FontSize="25"
+                FontFamily=""/>
+            <Button
+                HorizontalOptions="Start"
+                Text="Assignments"
+                HeightRequest="225"
+                WidthRequest="200"
+                CornerRadius="0"
+                BorderWidth="1"
+                Clicked="AssignmentsClicked"
+                FontSize="25"
+                FontFamily=""/>
+            <Button
+                HorizontalOptions="Start"
+                Text="Students"          
+                HeightRequest="225"
+                WidthRequest="200"
+                CornerRadius="0"
+                BorderWidth="1"
+                FontSize="25"
+                Clicked="StudentsClicked"
+                FontFamily=""/>
+            <Button
+                HorizontalOptions="Start"
+                Text="Edit"          
+                HeightRequest="225"
+                WidthRequest="200"
+                CornerRadius="0"
+                BorderWidth="1"
+                FontSize="25"
+                Clicked="EditClicked"
+                FontFamily=""/>
+            <Button
+                    HorizontalOptions="Start"
+                    Text="Return"
+                    HeightRequest="225"
+                    WidthRequest="200"
+                    CornerRadius="0"
+                    BorderWidth="1"
+                    FontSize="25"
+                    Clicked="CancelClicked"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start">
+            <Label
+                Text="{Binding Name}"
+                HorizontalOptions="FillAndExpand"
+                FontSize="60"
+                FontFamily=""
+                FontAttributes="Bold"
+                Margin="0,0,20,20"/>
+            <Label
+                HorizontalOptions="FillAndExpand"
+                Text="{Binding Description}"
+                FontSize="50"
+                FontFamily=""
+                Margin="0,0,20,20"/>
+        </VerticalStackLayout>
+
+    </StackLayout>
+</ContentPage>

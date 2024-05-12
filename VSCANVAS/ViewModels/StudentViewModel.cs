@@ -9,7 +9,11 @@ namespace VSCANVAS.ViewModels
     internal class StudentViewModel : INotifyPropertyChanged
     {
         private StudentService studentSvc;
+        private CourseService courseSvc;
+        private CourseRosterViewModel course;
+
         public string Query { get; set; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
@@ -45,9 +49,21 @@ namespace VSCANVAS.ViewModels
             NotifyPropertyChanged(nameof(Students));
         }
 
+        public void AddToCourse(int CourseId)
+        {
+            int sID = (int)SelectedStudent.StudentId;
+            Course courseUsed = courseSvc.Get(CourseId);
+            if (sID != null)
+            {
+                courseSvc.AddStudent(sID, courseUsed);
+                course.Refresh();
+            }
+        }
+
         public StudentViewModel()
         {
             studentSvc = StudentService.Current;
+            courseSvc = CourseService.Current;
         }
     }
 }

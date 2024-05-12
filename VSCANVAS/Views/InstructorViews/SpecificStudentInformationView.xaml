@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VSCANVAS.Views.SpecificStudentInformationView"
+             Title="SpecificStudentInformationView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <VerticalStackLayout>
+        <Label
+            Margin="0,0,0,20"
+            Text="{Binding StudentId}"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            FontSize="40"
+            FontFamily=""/>
+        <Label
+            Text="{Binding Name}"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            FontSize="60"
+            FontFamily=""/>
+        <Label
+            HorizontalOptions="Center"
+            Text="Course List"
+            FontSize="50"
+            FontFamily=""/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                Text="Enroll in Course"
+                BorderWidth="1"
+                FontSize="25"
+                FontFamily=""
+                VerticalOptions="EndAndExpand"
+                Margin="0,20,0,0"
+                Clicked="EnrollInCourseClicked"/>
+            <Button
+                Text="Remove from Course"
+                BorderWidth="1"
+                FontSize="25"
+                FontFamily=""
+                VerticalOptions="EndAndExpand"
+                Margin="20,20,0,0"/>
+        </HorizontalStackLayout>
+        <Button 
+            WidthRequest="150"
+            BorderWidth="1"
+            FontSize="25"
+            Text="Return"
+            Clicked="CancelClicked"
+            FontFamily=""
+            VerticalOptions="EndAndExpand"
+            Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

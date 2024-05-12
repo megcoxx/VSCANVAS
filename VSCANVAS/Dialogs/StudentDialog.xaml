@@ -5,26 +5,29 @@
              Title="StudentDialog"
              NavigatedTo="ContentPage_NavigatedTo"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="20">
         <Label 
-            Text="New Student"
+            Text="Student Details"
+            Margin="20"
+            FontSize="30"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Grid>
+            HorizontalOptions="Center"
+            FontFamily=""/>
+        <Grid Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="Name" Grid.Column="0" Grid.Row="0"/>
-            <Entry Text="{Binding Name}" Grid.Column="1" Grid.Row="0"/>
-            <Label Text="Class Level" Grid.Column="0" Grid.Row="1"/>
-            <Entry Text="{Binding Classification}" Grid.Column="1" Grid.Row="1"/>
+            <Label Text="Name" FontSize="20" FontFamily="" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Name}" FontSize="20" FontFamily="" Grid.Column="1" Grid.Row="0"/>
+            <Label Text="Class Level" FontSize="20" FontFamily="" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Classification}" FontSize="20" FontFamily="" Grid.Column="1" Grid.Row="1"/>
         </Grid>
-        <Button Text="Confirm" Clicked="ConfirmClicked"/>
-        <Button Text="Cancel" Clicked="CancelClicked"/>
+        <Button Text="Confirm" FontFamily="" Margin="50" FontSize="20" Clicked="ConfirmClicked"/>
+        <Button Text="Cancel" FontFamily="" Margin="50, 0, 50, 50" FontSize="20" Clicked="CancelClicked"/>
     </VerticalStackLayout>
 </ContentPage>

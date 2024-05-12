@@ -5,29 +5,32 @@
              Title="CourseDialog"
              NavigatedTo="ContentPage_NavigatedTo"
              >
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="20">
         <Label 
-            Text="New Course"
+            Text="Course Details"
+            FontFamily=""
+            Margin="20"
+            FontSize="30"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Grid>
+        <Grid Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition />
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="Name" Grid.Column="0" Grid.Row="0"/>
-            <Entry Text="{Binding Name}" Grid.Column="1" Grid.Row="0"/>
-            <Label Text="Class Code" Grid.Column="0" Grid.Row="1"/>
-            <Entry Text="{Binding Code}" Grid.Column="1" Grid.Row="1"/>
-            <Label Text="Description" Grid.Column="0" Grid.Row="2"/>
-            <Entry Text="{Binding Description}" Grid.Column="1" Grid.Row="2"/>
+            <Label Text="Name" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Name}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="0"/>
+            <Label Text="Class Code" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Code}" FontFamily="" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+            <Label Text="Description" FontFamily="" FontSize="20" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Description}" FontSize="20" FontFamily="" Grid.Column="1" Grid.Row="2"/>
         </Grid>
-        <Button Text="Confirm" Clicked="ConfirmClicked"/>
-        <Button Text="Cancel" Clicked="CancelClicked"/>
+        <Button Text="Confirm" FontFamily="" Margin="50" FontSize="20" Clicked="ConfirmClicked"/>
+        <Button Text="Cancel" FontFamily="" Margin="50,0,50,50" FontSize="20" Clicked="CancelClicked"/>
     </VerticalStackLayout>
 </ContentPage>
